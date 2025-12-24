@@ -1,0 +1,29 @@
+name: Training Model Otomatis
+
+# Trigger: Jalan setiap kali kita push code
+on: [push]
+
+jobs:
+  training:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Mengambil kodingan dari repo
+    - uses: actions/checkout@v2
+    
+    # 2. Menyiapkan Python 3.9
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        
+    # 3. Menginstall Library
+    - name: Install Dependencies
+      run: |
+        pip install mlflow pandas scikit-learn
+        
+    # 4. Menjalankan Training
+    - name: Run MLflow Project
+      run: |
+        cd MLProject
+        python modelling.py
