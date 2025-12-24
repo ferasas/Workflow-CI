@@ -25,5 +25,7 @@ jobs:
     # 4. Menjalankan Training
     - name: Run MLflow Project
       run: |
+        cd Workflow-CI/MLProject
+        python modelling.py
         cd MLProject
         python modelling.py
