@@ -27,5 +27,3 @@ jobs:
       run: |
         cd Workflow-CI/MLProject
         python modelling.py
-        cd MLProject
-        python modelling.py
